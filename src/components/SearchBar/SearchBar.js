@@ -51,13 +51,14 @@ class SearchBar extends React.Component {
 
   handleLocationChange(e) {
     const newLocation = e.target.value;
-    this.setState({term: newLocation});
+    this.setState({location: newLocation});
   }
 
   handleSearch(e) {
     //const term = e.target.value.term;
     //const location = e.target.value.location;
     //const sortBy = e.target.value.sortBy;
+    console.log('en searchYelp de SearchBar term:' + this.state.term + ' location: ' + this.state.location);
     this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     e.preventDefault();
   }
